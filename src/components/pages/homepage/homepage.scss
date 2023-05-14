@@ -1,0 +1,30 @@
+.line1{
+    font-size: 7rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    left: 5%;
+    top: 45%;
+    position: absolute;
+}
+
+.line2{
+    font-size: 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    left: 5%;
+    top: 55%;
+
+}
+
+.transparentBg{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.13);
+    // border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.4px);
+    -webkit-backdrop-filter: blur(3.4px);
+    // border: 1px solid rgba(255, 255, 255, 0.41);
+}
+
+.page2{
+    background: white;
+}
