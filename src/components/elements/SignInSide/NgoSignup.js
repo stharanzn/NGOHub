@@ -13,42 +13,53 @@ export default function NgoSignup() {
       return emailRegex.test(email);
     }
 
-    function validateUser(username, pass){
-      if(username === "test" && pass === "test"){
-        return true
-      }else{
-        return false
-      }
-    }
-
     const login = () =>{
-      const username = document.getElementById('username-login').value
+      const email = document.getElementById('email-login').value
       const pass = document.getElementById('password-login').value
+      console.log(email + " " + pass)
 
-      if(validateUser(username, pass)){
-        auth.login(username, "ngo")
-        navigate(`/ngoProfile/${username}`)
+      if(isValidEmail(email, pass)){
+        const data = {"email":email, "password":pass, "role": "ngo"}
+        auth.login(data)
+        
       }
 
     }
 
 
     const signup = () =>{
-      const email = document.getElementById('email').value
-      const username = document.getElementById('username-signup').value
-      const mobNo = document.getElementById('mob-number-signup').value
+      const orgName = document.getElementById('org-name').value
+      const orgBio = document.getElementById('org-bio').value
+      const orgEmail = document.getElementById('org-email').value
+      const orgMob = document.getElementById('mob-number-signup').value
       const password = document.getElementById('password-signup').value
       const repass = document.getElementById('re-password-signup').value
+      const mission = document.getElementById('org-mission').value
+      const regNo = document.getElementById('org-reg-no').value
+      const loc = document.getElementById('org-loc').value
       const tnc = document.getElementById('confirm-terms').checked
+      const ngoSignup = {
+        uid: "",
+        role: "ngo",
+        orgName: orgName,
+        orgBio: orgBio,
+        orgEmail, orgEmail,
+        orgMob: orgMob,
+        pass : password,
+        mission: mission,
+        regNo: regNo,
+        loc: loc,
+        orgPic: "https://images.pexels.com/photos/753267/pexels-photo-753267.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        isProfileComplete: true
+      }
 
-      console.log(isValidEmail(email))
+      console.log(isValidEmail(orgEmail))    
 
-
-
-      if(tnc && email != null  && username != null && mobNo != null && password != null && password === repass){
-        if(isValidEmail(email)){
-          auth.login(username, "ngo")
-          navigate(`/ngoProfile/${username}`, {replace:true})
+      if(tnc && orgBio != null && mission != null && regNo != null && loc != null && orgEmail != null  && orgName != null && orgMob != null && password != null && password === repass){
+        if(isValidEmail(orgEmail)){
+          // console.log(ngoSignup )
+          auth.create(ngoSignup)
+          // navigate(`/ngoProfile/${orgName}`, {replace:true})
         }
 
             
@@ -60,6 +71,7 @@ export default function NgoSignup() {
           if(!tnc){
             alert("Please accept the terms and conditions.")
           }
+          
       }
     }
 
@@ -98,23 +110,20 @@ export default function NgoSignup() {
         <form id="form-signup" method="post" onSubmit={handleSubmit} onsubmit="return false;">
 
 <div class="form-element form-stack">
-    <label for="orgName" class="form-label">Organization Name</label>
-    <input id="orgName" type="text" name="orgname"/>
+    <label for="org-name" class="form-label">Organization Name</label>
+    <input id="org-name" type="text" name="orgname"/>
 </div>
 
 <div class="form-element form-stack">
-    <label for="orgBio" class="form-label">Organization Bio:- </label>
-    <input placeholder='short bio of your NGO' id="orgBio" type="text" name="orgBio"/>
+    <label for="org-bio" class="form-label">Organization Bio:- </label>
+    <input placeholder='short bio of your NGO' id="org-bio" type="text" name="orgBio"/>
 </div>
 
 <div class="form-element form-stack">
-  <label for="email" class="form-label">Email</label>
-  <input id="email" type="email" name="email"/>
+  <label for="org-email" class="form-label">Email</label>
+  <input id="org-email" type="email" name="email"/>
 </div>
-<div class="form-element form-stack">
-  <label for="mob-number" class="form-label">Mobile No.</label>
-  <input id="mob-number-signup" type="text" name="mob_no"/>
-</div>
+
 <div class="form-element form-stack">
   <label for="password-signup" class="form-label">Password</label>
   <input id="password-signup" type="password" name="password"/>
@@ -123,17 +132,22 @@ export default function NgoSignup() {
   <label for="re-password-signup" class="form-label">Re-Enter password</label>
   <input id="re-password-signup" type="password" name="password"/>
 </div>
+
+<div class="form-element form-stack">
+  <label for="mob-number" class="form-label">Mobile No.</label>
+  <input id="mob-number-signup" type="text" name="mob_no"/>
+</div>
 <div class="form-element form-stack">
   <label for="mission" class="form-label">Mission</label>
-  <input placeholder='No child will sleep hungry.' id="mission" type="text" name="mission"/>
+  <input placeholder='No child will sleep hungry.' id="org-mission" type="text" name="mission"/>
 </div>
 <div class="form-element form-stack">
   <label for="regNo" class="form-label">Registraion No.</label>
-  <input placeholder='Ex: ABC123456' id="regNo" type="text" name="tegNo"/>
+  <input placeholder='Ex: ABC123456' id="org-reg-no" type="text" name="tegNo"/>
 </div>
 <div class="form-element form-stack">
   <label for="loc" class="form-label">Location</label>
-  <input placeholder='City, state' id="lov" type="text" name="loc"/>
+  <input placeholder='City, state' id="org-loc" type="text" name="loc"/>
 </div>
 
 <div class="form-element form-checkbox">
@@ -152,8 +166,8 @@ export default function NgoSignup() {
         <h2>Login as NGO</h2>
         <form id="form-login" method="post" onSubmit={handleSubmit} onsubmit="return false;">
           <div class="form-element form-stack">
-            <label for="username-login" class="form-label">Username</label>
-            <input id="username-login" type="text" name="username"/>
+            <label for="email-login" class="form-label">Email</label>
+            <input id="email-login" type="text" name="username"/>
           </div>
           <div class="form-element form-stack">
             <label for="password-login" class="form-label">Password</label>

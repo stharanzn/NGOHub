@@ -101,18 +101,16 @@ export default function VolunteerSignup() {
       <div class="content">
         <h2>Sign Up as Volunteer</h2>
         <form id="form-signup" method="post" onSubmit={handleSubmit} onsubmit="return false;">
-          <div class="form-element form-stack">
-            <label for="email" class="form-label">Email</label>
-            <input id="email" type="email" name="email" />
-          </div>
-          <div class="form-element form-stack">
+        <div class="form-element form-stack">
             <label for="username-signup" class="form-label">Username</label>
             <input id="username-signup" type="text" name="username" />
           </div>
           <div class="form-element form-stack">
-            <label for="mob-number" class="form-label">Mobile No.</label>
-            <input id="mob-number-signup" type="text" name="mob_no" />
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" name="email" />
           </div>
+
+
           <div class="form-element form-stack">
             <label for="password-signup" class="form-label">Password</label>
             <input id="password-signup" type="password" name="password" />
@@ -120,6 +118,10 @@ export default function VolunteerSignup() {
           <div class="form-element form-stack">
             <label for="re-password-signup" class="form-label">Re-Enter password</label>
             <input id="re-password-signup" type="password" name="password" />
+          </div>
+          <div class="form-element form-stack">
+            <label for="mob-number" class="form-label">Mobile No.</label>
+            <input id="mob-number-signup" type="text" name="mob_no" />
           </div>
 
           <div class="form-element form-checkbox">
