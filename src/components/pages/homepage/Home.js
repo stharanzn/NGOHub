@@ -22,12 +22,7 @@ export default function Home() {
           <span className='line2'>Find NGOs where even small contributions can make a big difference.</span>
         
         </div>
-        <div className='cover page2' style={{color:"black"}}>
 
-          Home Page
-          
-          </div>
-        <div className='cover page3' style={{color:"black"}}>Home Page</div>
         
     </>
 

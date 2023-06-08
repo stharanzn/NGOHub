@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import "./findpage.scss"
 import DisplayCard from '../../elements/displayCard/DisplayCard';
 
+
 export default function FindPage() {
 
   const [data, setData] = useState([]);
@@ -48,7 +49,7 @@ desc: "Advocating for gender equality and women's empowerment.", loc: "Uttrakhan
   
   return (
     <>
-
+    {console.log(process.env.REACT_APP_TEST + " testtt")}
     <div className='wrapper'>    
    
       
@@ -61,7 +62,8 @@ desc: "Advocating for gender equality and women's empowerment.", loc: "Uttrakhan
       }
       <div class="cover findpage1">
         
-        <iframe title='nearbyNGOs' id="googleframe" width="90%" height="80%" frameborder="0" src={`https://www.google.com/maps/embed/v1/search?q=${query}&key=${process.env.GOOGLE_API_KEY}`}>
+        <iframe title='nearbyNGOs' id="googleframe" width="90%" height="80%" frameborder="0" src={`https://www.google.com/maps/embed/v1/search?q=${query}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}>
+          {/* ${process.env.REACT_APP_GOOGLE_API_KEY} */}
  	      </iframe>  
       </div>
     </div>  

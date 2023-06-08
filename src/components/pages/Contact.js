@@ -40,7 +40,7 @@ export default function contact() {
         <label for="message">Your message:</label><br />
         <div class="inputwrap"><input type="textarea" /><div class="bar"></div></div><br />
       </div>
-      <div class="btnwrap"><input id="submit_button" type="submit" value="Do a thing!" /></div>
+      <div class="btnwrap"><input id="submit_button" type="submit" value="Submit" /></div>
     </form>			
     </div>
     </div>
