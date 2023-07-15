@@ -62,7 +62,7 @@ desc: "Advocating for gender equality and women's empowerment.", loc: "Uttrakhan
       }
       <div class="cover findpage1">
         
-        <iframe title='nearbyNGOs' id="googleframe" width="90%" height="80%" frameborder="0" src={`https://www.google.com/maps/embed/v1/search?q=${query}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}>
+        <iframe title='nearbyNGOs' id="googleframe" width="90%" height="80%" frameborder="0" src={`https://www.google.com/maps/embed/v1/search?q=${query}&key=AIzaSyCBDr8QFM4u7DEHVsXGKtcHeHdcHjaK0J4`}>
           {/* ${process.env.REACT_APP_GOOGLE_API_KEY} */}
  	      </iframe>  
       </div>
