@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/NGOHub/static/css/main.7bb4960d.css",
+    "main.js": "/NGOHub/static/js/main.56400044.js",
+    "static/js/787.1ed0c42c.chunk.js": "/NGOHub/static/js/787.1ed0c42c.chunk.js",
+    "static/media/helvetica-neu.ttf": "/NGOHub/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
+    "static/media/LaBelleAurore.woff2": "/NGOHub/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/CoolveticaRg-Regular.woff2": "/NGOHub/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/NGOHub/index.html",
+    "main.7bb4960d.css.map": "/NGOHub/static/css/main.7bb4960d.css.map",
+    "main.56400044.js.map": "/NGOHub/static/js/main.56400044.js.map",
+    "787.1ed0c42c.chunk.js.map": "/NGOHub/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bb4960d.css",
+    "static/js/main.56400044.js"
+  ]
+}
